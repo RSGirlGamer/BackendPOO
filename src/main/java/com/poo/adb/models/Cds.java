@@ -6,6 +6,7 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,13 +14,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @DiscriminatorValue("cd")
 @Entity
+@PrimaryKeyJoinColumn(name = "id_cd", referencedColumnName = "id_material")
 public class Cds extends Materiales {
 	
-	@Column
-	private Integer id_cd;
-	
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "curso_id")
 	private Categorias curso_id;
 	
 	@Column

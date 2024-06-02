@@ -23,12 +23,12 @@ public class Prestamos {
 	private int id_prestamo;
 	
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "user_id")
 	private Users user_id;
 	
 	@ManyToOne
-	@JoinColumn
-	private Materiales material_id;
+	@JoinColumn(name = "id_material")
+	private Materiales id_material;
 	
 	@Column
 	private Date fecha_prestamo;

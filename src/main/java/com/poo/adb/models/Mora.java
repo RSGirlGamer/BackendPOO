@@ -21,7 +21,7 @@ public class Mora {
 	private Integer id_mora;
 	
 	@OneToOne
-	@JoinColumn
+	@JoinColumn(name = "id_prestamo")
 	private Prestamos id_prestamo;
 	
 	@Column
